@@ -1,10 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { challenges } from "../../data/site";
+import { withBase } from "../../utils/paths";
 ---
 <BaseLayout title="Challenges" description="Four applied AI challenges explored through the lens of finance.">
   <section class="page-hero"><p class="eyebrow">Our learning roadmap</p><h1>Four challenges.<br/><em>One evolving practice.</em></h1><p>From symbolic reasoning to methods still ahead, every challenge becomes a transparent record of decisions, failures, and evidence.</p></section>
   <section class="challenge-cards">
-    {challenges.map((challenge) => <article class:list={["challenge-card", { muted: challenge.status === "Upcoming" }]}><div class="card-top"><span>{challenge.number}</span><span class:list={["status", challenge.status.toLowerCase()]}>{challenge.status}</span></div><h2>{challenge.title}</h2><p>{challenge.description}</p><div class="tag-list">{challenge.topics.map((topic) => <span>{topic}</span>)}</div>{challenge.status === "Active" ? <a class="button primary" href={`/challenges/${challenge.slug}`}>Open challenge</a> : <span class="coming">Brief pending</span>}</article>)}
+    {challenges.map((challenge) => <article class:list={["challenge-card", { muted: challenge.status === "Upcoming" }]}><div class="card-top"><span>{challenge.number}</span><span class:list={["status", challenge.status.toLowerCase()]}>{challenge.status}</span></div><h2>{challenge.title}</h2><p>{challenge.description}</p><div class="tag-list">{challenge.topics.map((topic) => <span>{topic}</span>)}</div>{challenge.status === "Active" ? <a class="button primary" href={withBase(`challenges/${challenge.slug}`)}>Open challenge</a> : <span class="coming">Brief pending</span>}</article>)}
   </section>
 </BaseLayout>

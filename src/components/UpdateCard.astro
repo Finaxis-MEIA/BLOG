@@ -1,11 +1,12 @@
 ---
 import { memberName } from "../data/members";
+import { withBase } from "../utils/paths";
 const { entry } = Astro.props;
 const date = entry.data.date.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
 ---
 <article class="update-card">
   <div class="update-meta"><span>Week {String(entry.data.week).padStart(2, "0")}</span><time datetime={entry.data.date.toISOString()}>{date}</time></div>
-  <h3><a href={`/updates/${entry.id}`}>{entry.data.title}</a></h3>
+  <h3><a href={withBase(`updates/${entry.id}`)}>{entry.data.title}</a></h3>
   <p>{entry.data.summary}</p>
-  <div class="update-foot"><span>{entry.data.authors.map(memberName).join(" · ")}</span><a href={`/updates/${entry.id}`} aria-label={`Read ${entry.data.title}`}>Read update <span aria-hidden="true">→</span></a></div>
+  <div class="update-foot"><span>{entry.data.authors.map(memberName).join(" · ")}</span><a href={withBase(`updates/${entry.id}`)} aria-label={`Read ${entry.data.title}`}>Read update <span aria-hidden="true">→</span></a></div>
 </article>

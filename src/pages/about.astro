@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { members } from "../data/members";
+import { withBase } from "../utils/paths";
 ---
 <BaseLayout title="About us" description="Meet the five students behind Finaxis.">
   <section class="page-hero about-hero"><p class="eyebrow">The people behind the process</p><h1>Different backgrounds.<br/><em>Shared curiosity.</em></h1><p>We are five Master's students in AI Engineering learning how rigorous artificial intelligence gets built: collaboratively, critically, and in full view.</p></section>
@@ -9,7 +10,7 @@ import { members } from "../data/members";
       <article class="member-card">
         <div class={`portrait portrait-${index + 1} ${member.photo ? "has-photo" : ""}`}>
           {member.photo ? (
-            <img src={member.photo} alt={`${member.name} profile photo`} class="member-photo" />
+            <img src={withBase(member.photo)} alt={`${member.name} profile photo`} class="member-photo" />
           ) : (
             <>
               <span>{member.initials}</span>

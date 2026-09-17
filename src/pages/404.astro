@@ -1,4 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../utils/paths";
 ---
-<BaseLayout title="Page not found"><section class="not-found"><span>404</span><p class="eyebrow">Signal lost</p><h1>This result<br/><em>doesn't compute.</em></h1><p>The page may have moved, or perhaps it was only a hypothesis.</p><a class="button primary" href="/">Return to the journal</a></section></BaseLayout>
+<BaseLayout title="Page not found"><section class="not-found"><span>404</span><p class="eyebrow">Signal lost</p><h1>This result<br/><em>doesn't compute.</em></h1><p>The page may have moved, or perhaps it was only a hypothesis.</p><a class="button primary" href={withBase()}>Return to the journal</a></section></BaseLayout>
