@@ -29,6 +29,4 @@ const updates = (await getCollection("updates", ({ data }) => !data.draft)).sort
       {challenges.map((challenge) => <a class:list={["challenge-row", { disabled: challenge.status === "Upcoming" }]} href={challenge.status === "Active" ? `/challenges/${challenge.slug}` : "/challenges"}><span class="challenge-number">{challenge.number}</span><div><h3>{challenge.title}</h3><p>{challenge.description}</p></div><span class:list={["status", challenge.status.toLowerCase()]}>{challenge.status}</span><span class="row-arrow">↗</span></a>)}
     </div>
   </section>
-
-  <section class="manifesto"><p>Our working principle</p><blockquote>“A model earns trust not by sounding certain, but by making its reasoning visible.”</blockquote><a class="button light" href="/about">Why we document everything</a></section>
 </BaseLayout>
