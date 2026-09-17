@@ -1,0 +1,9 @@
+export const members = [
+  { id: "member-1", initials: "AM", name: "Alex Morgan", role: "Knowledge Engineer", background: "Computer science graduate focused on symbolic AI, rule systems, and explainable decision support.", skills: ["Drools", "Java", "Knowledge graphs"], email: "alex@example.com", linkedin: "https://www.linkedin.com", github: "https://github.com" },
+  { id: "member-2", initials: "BS", name: "Blake Silva", role: "Financial Domain Lead", background: "Finance professional bringing experience in risk analysis, business processes, and financial modelling.", skills: ["Risk analysis", "Python", "Finance"], email: "blake@example.com", linkedin: "https://www.linkedin.com", github: "https://github.com" },
+  { id: "member-3", initials: "CJ", name: "Casey Jones", role: "Data & Research Lead", background: "Data analyst interested in turning empirical evidence into dependable and measurable AI systems.", skills: ["Data analysis", "SQL", "Research"], email: "casey@example.com", linkedin: "https://www.linkedin.com", github: "https://github.com" },
+  { id: "member-4", initials: "DK", name: "Drew Kim", role: "Software Engineer", background: "Software engineer specialising in maintainable architectures, testing, and product delivery.", skills: ["TypeScript", "Testing", "Architecture"], email: "drew@example.com", linkedin: "https://www.linkedin.com", github: "https://github.com" },
+  { id: "member-5", initials: "ER", name: "Emery Rocha", role: "Documentation & UX Lead", background: "Product-minded technologist translating complex systems into clear stories, diagrams, and interfaces.", skills: ["UX", "Technical writing", "Visualisation"], email: "emery@example.com", linkedin: "https://www.linkedin.com", github: "https://github.com" }
+];
+
+export const memberName = (id: string) => members.find((member) => member.id === id)?.name ?? id;

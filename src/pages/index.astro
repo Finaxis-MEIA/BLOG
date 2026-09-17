@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import UpdateCard from "../components/UpdateCard.astro";
+import { challenges } from "../data/site";
+const updates = (await getCollection("updates")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Master's in AI Engineering · Field Journal</p>
+      <h1>Where financial logic meets <em>machine reasoning.</em></h1>
+      <p class="hero-lead">Five engineers. Four challenges. One open record of what we build, test, question, and learn.</p>
+      <div class="button-row"><a class="button primary" href="/challenges/expert-system">Explore challenge 01</a><a class="text-link" href="/about">Meet the team <span>→</span></a></div>
+    </div>
+    <div class="hero-art"><img src="/hero-grid.svg" alt="Rising financial chart connected by reasoning nodes"/><span class="art-tag">LIVE<br/><b>02</b> updates</span></div>
+  </section>
+
+  <section class="ticker" aria-label="Project principles"><span>Explainable by design</span><span>Evidence over instinct</span><span>Progress in public</span></section>
+
+  <section class="section latest">
+    <div class="section-head"><div><p class="eyebrow">Latest from the lab</p><h2>Work, as it happens.</h2></div><a class="text-link" href="/challenges/expert-system">Full journal <span>→</span></a></div>
+    <div class="updates-grid">{updates.slice(0, 2).map((entry) => <UpdateCard entry={entry}/>)}</div>
+  </section>
+
+  <section class="section roadmap">
+    <div class="section-head"><div><p class="eyebrow">The programme</p><h2>Four tests of applied intelligence.</h2></div><p class="section-intro">Each challenge adds a different method to our toolkit while keeping finance as our proving ground.</p></div>
+    <div class="challenge-list">
+      {challenges.map((challenge) => <a class:list={["challenge-row", { disabled: challenge.status === "Upcoming" }]} href={challenge.status === "Active" ? `/challenges/${challenge.slug}` : "/challenges"}><span class="challenge-number">{challenge.number}</span><div><h3>{challenge.title}</h3><p>{challenge.description}</p></div><span class:list={["status", challenge.status.toLowerCase()]}>{challenge.status}</span><span class="row-arrow">↗</span></a>)}
+    </div>
+  </section>
+
+  <section class="manifesto"><p>Our working principle</p><blockquote>“A model earns trust not by sounding certain, but by making its reasoning visible.”</blockquote><a class="button light" href="/about">Why we document everything</a></section>
+</BaseLayout>

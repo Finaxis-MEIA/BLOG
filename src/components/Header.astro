@@ -1,0 +1,10 @@
+---
+const path = Astro.url.pathname;
+const links = [{ href: "/", label: "Journal" }, { href: "/challenges", label: "Challenges" }, { href: "/about", label: "About us" }];
+---
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Finaxis home"><img src="/logo.svg" alt="" width="44" height="44"/><span>Finaxis</span></a>
+  <nav aria-label="Main navigation">
+    {links.map((link) => <a href={link.href} aria-current={path === link.href || (link.href !== "/" && path.startsWith(link.href)) ? "page" : undefined}>{link.label}</a>)}
+  </nav>
+</header>
