@@ -5,7 +5,32 @@ import { members } from "../data/members";
 <BaseLayout title="About us" description="Meet the five students behind Finaxis.">
   <section class="page-hero about-hero"><p class="eyebrow">The people behind the process</p><h1>Different backgrounds.<br/><em>Shared curiosity.</em></h1><p>We are five Master's students in AI Engineering learning how rigorous artificial intelligence gets built: collaboratively, critically, and in full view.</p></section>
   <section class="team-grid">
-    {members.map((member, index) => <article class="member-card"><div class={`portrait portrait-${index + 1}`}><span>{member.initials}</span><small>Profile image placeholder</small></div><div class="member-content"><span class="member-index">0{index + 1}</span><p class="role">{member.role}</p><h2>{member.name}</h2><p>{member.background}</p><div class="tag-list">{member.skills.map((skill) => <span>{skill}</span>)}</div><div class="member-links"><a href={`mailto:${member.email}`}>Email</a><a href={member.linkedin}>LinkedIn</a><a href={member.github}>GitHub</a></div></div></article>)}
+    {members.map((member, index) => (
+      <article class="member-card">
+        <div class={`portrait portrait-${index + 1} ${member.photo ? "has-photo" : ""}`}>
+          {member.photo ? (
+            <img src={member.photo} alt={`${member.name} profile photo`} class="member-photo" />
+          ) : (
+            <>
+              <span>{member.initials}</span>
+              <small>Profile image placeholder</small>
+            </>
+          )}
+        </div>
+        <div class="member-content">
+          <span class="member-index">0{index + 1}</span>
+          <p class="role">{member.role}</p>
+          <h2>{member.name}</h2>
+          <p>{member.background}</p>
+          <div class="tag-list">{member.skills.map((skill) => <span>{skill}</span>)}</div>
+          <div class="member-links">
+            <a href={`mailto:${member.email}`}>Email</a>
+            <a href={member.linkedin}>LinkedIn</a>
+            <a href={member.github}>GitHub</a>
+          </div>
+        </div>
+      </article>
+    ))}
   </section>
   <section class="contact-band"><div><p class="eyebrow">Open to conversation</p><h2>Question our assumptions.</h2></div><p>Found a useful source, a flawed rule, or a better approach? Our work improves when others inspect it.</p><a class="button light" href="mailto:team@example.com">team@example.com</a></section>
 </BaseLayout>

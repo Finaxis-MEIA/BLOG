@@ -10,7 +10,8 @@ const updates = defineCollection({
     date: z.coerce.date(),
     authors: z.array(z.string()),
     status: z.enum(["in-progress", "completed"]),
-    summary: z.string()
+    summary: z.string(),
+    draft: z.boolean().optional().default(false)
   })
 });
 

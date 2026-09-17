@@ -4,5 +4,5 @@
   <g stroke="#f7faff" stroke-opacity=".58" stroke-width="3"><path d="M110 390v90M95 420h30v32H95z"/><path d="M185 310v120M170 332h30v62h-30z"/><path d="M260 350v88M245 368h30v42h-30z"/><path d="M335 240v142M320 272h30v72h-30z"/></g>
   <path d="m85 430 105-96 75 54 105-122 94 38 92-129 142-74" fill="none" stroke="url(#line)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
   <g fill="#0b2a4a" stroke="#4cc9f0" stroke-width="5"><circle cx="190" cy="334" r="11"/><circle cx="370" cy="266" r="11"/><circle cx="556" cy="175" r="11"/><circle cx="698" cy="101" r="11"/></g>
-  <g fill="#f7faff" font-family="Arial,sans-serif"><text x="84" y="88" font-size="18" letter-spacing="4">SIGNAL / REASON / EXPLAIN</text><text x="84" y="555" font-size="84" font-family="Georgia,serif">01</text><text x="205" y="541" font-size="20">EXPERT SYSTEM</text><text x="205" y="570" font-size="15" opacity=".6">CHALLENGE IN PROGRESS</text></g>
+  <g fill="#f7faff" font-family="Arial,sans-serif"><text x="84" y="88" font-size="18" letter-spacing="4">SIGNAL / REASON / EXPLAIN</text><text x="84" y="555" font-size="84" font-family="Georgia,serif">01</text><text x="205" y="570" font-size="15" opacity=".6">CHALLENGE IN PROGRESS</text></g>
 </svg>
