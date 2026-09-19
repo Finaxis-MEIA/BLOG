@@ -4,7 +4,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import UpdateCard from "../../components/UpdateCard.astro";
 import { withBase } from "../../utils/paths";
 const updates = (await getCollection("updates", ({ data }) => data.challenge === "expert-system" && !data.draft)).sort((a, b) => b.data.week - a.data.week);
-const candidates = ["Credit risk triage", "Fraud alert prioritisation", "Investment suitability", "Loan eligibility"];
 ---
 <BaseLayout title="Expert System" description="Challenge 01: building an explainable expert system for a financial decision.">
   <section class="challenge-hero">
@@ -13,16 +12,9 @@ const candidates = ["Credit risk triage", "Fraud alert prioritisation", "Investm
       <p class="eyebrow">Challenge 01 · Active</p>
       <h1>Expert<br/><em>System.</em></h1>
       <p class="hero-lead">Can explicit rules make a financial recommendation that is useful, testable, and honest about how it was reached?</p>
-      <nav class="challenge-section-nav" aria-label="Challenge sections">
-        <a href="#brief">The brief</a>
-        <a href="#domain-discovery">Domain discovery</a>
-        <a href="#journal">Progress log</a>
-      </nav>
     </div>
     <div class="hero-art"><img src={withBase("hero-grid.svg")} alt="Abstract expert system and finance diagram"/></div>
   </section>
-  <section id="brief" class="brief-grid"><div><p class="eyebrow">The brief</p><h2>Build reasoning people can inspect.</h2></div><div><p>We will identify a bounded financial decision, extract domain knowledge, encode it as rules, and evaluate both recommendations and explanations.</p><dl><div><dt>Engine</dt><dd>Drools</dd></div><div><dt>Domain</dt><dd>Finance</dd></div><div><dt>Phase</dt><dd>Discovery</dd></div><div><dt>Updates</dt><dd>{String(updates.length).padStart(2, "0")}</dd></div></dl></div></section>
-  <section id="domain-discovery" class="candidates section"><div class="section-head"><div><p class="eyebrow">Domain discovery</p><h2>Four questions worth encoding.</h2></div><p class="section-intro">Topic remains intentionally open while we compare scope, rule quality, testability, and ethical risk.</p></div><ol>{candidates.map((candidate, index) => <li><span>0{index + 1}</span>{candidate}<small>Under evaluation</small></li>)}</ol></section>
   <section id="journal" class="section journal"><div class="section-head"><div><p class="eyebrow">Progress log</p><h2>Weekly field notes.</h2></div><span class="count">{updates.length} entries</span></div><div class="updates-grid">{updates.map((entry) => <UpdateCard entry={entry}/>)}</div></section>
   <aside class="disclaimer"><strong>Project boundary</strong><p>This academic prototype does not provide financial advice. Rules, thresholds, and outputs must be independently validated before any real-world use.</p></aside>
 </BaseLayout>
