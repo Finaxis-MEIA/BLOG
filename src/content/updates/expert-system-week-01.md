@@ -3,7 +3,7 @@ title: "Finding the right financial decision"
 challenge: "expert-system"
 week: 1
 date: 2026-09-14
-authors: ["member-1", "member-2", "member-3", "member-4"]
+authors: ["member-1", "member-2", "member-3", "member-4", "member-5"]
 status: "completed"
 summary: "We compared four candidate domains and established criteria for selecting an expert-system problem."
 ---

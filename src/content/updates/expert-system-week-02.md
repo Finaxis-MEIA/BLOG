@@ -3,7 +3,7 @@ title: "From broad topic to bounded rules"
 challenge: "expert-system"
 week: 2
 date: 2026-09-21
-authors: ["member-1", "member-2", "member-3", "member-4"]
+authors: ["member-1", "member-2", "member-3", "member-4", "member-5"]
 status: "in-progress"
 summary: "Candidate problems become user stories, decision boundaries, and testable rule concepts."
 draft: true
