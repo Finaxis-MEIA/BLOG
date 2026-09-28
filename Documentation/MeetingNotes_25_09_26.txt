@@ -1,0 +1,24 @@
+== Informação recolhida na reunião com os peritos: ==
+
+
+Factos:
+* Rendimento do cliente
+* Taxa de esforço / capacidade de pagamento
+* Histórico de crédito
+* Estabilidade profissional
+Endividamento atual
+* Montante solicitado
+* Valor do veículo
+* Entrada inicial
+* Idade do veículo
+* Relação entre financiamento e valor do veículo (LTV)
+
+
+cliente - ClienteId, Idade, RendimentoMensal, AnosEmpregoAtual, HistoricoCredito
+pedido - ClienteId, Montante, PrazoMeses, TaxaJuroAnual, ValorVeiculo, IdadeVeiculoAnos, EntradaInicial
+Montante efetivamente financiado - montante - entrada inicial
+Prestacao mensal - juro simples anualizado, distribuido pelo prazo
+Taxa de esforco = (prestacao mensal / rendimento mensal) * 100
+Idade do veiculo - veiculos mais velhos = maior risco de desvalorizacao
+Taxa de esforco (DSTI) - % do rendimento gasto na prestacao
+Racio LTV - quanto mais perto ou acima de 100%, maior o risco
