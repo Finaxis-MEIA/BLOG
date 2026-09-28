@@ -1,7 +1,7 @@
 export const site = {
   name: "Finaxis",
-  slogan: "Reasoning through finance, one challenge at a time.",
-  description: "Five AI engineering students documenting four challenges at the intersection of artificial intelligence and finance."
+  slogan: "Reasoning through finance.",
+  description: "Six AI engineering students documenting four challenges at the intersection of artificial intelligence and finance."
 };
 
 export const challenges = [
@@ -10,8 +10,8 @@ export const challenges = [
     slug: "expert-system",
     title: "Expert System",
     status: "Active",
-    description: "Designing explainable rules for a real financial decision, from domain research to validation.",
-    topics: ["Knowledge engineering", "Drools", "Explainability"]
+    description: "Development of an Expert System for the automatic approval of automotive credit.",
+    topics: ["Knowledge engineering", "Drools", "Prolog"]
   },
   {
     number: "02",
