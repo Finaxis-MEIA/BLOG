@@ -29,7 +29,6 @@ We started with four initial candidates: **credit risk triage**, **fraud alert p
 ## Decision log
 
 By the end of the week, it was established that the project will focus on **credit risk assessment**. The remaining decision is whether to address the full spectrum of credit types (personal, mortgage, and auto loans) or narrow our scope down to a single segment. While all options remain viable, they differ significantly in data availability, regulatory constraints, and ruleability within our inference engine. We will continue refining this choice by evaluating how easily each loan type can be modeled under real-world scenarios.
-> An expert system is only useful when its reasoning can be inspected, challenged, and improved.
 
 ## Next week
 
