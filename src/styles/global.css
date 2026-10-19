@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
 
 :root {
     --ink: #071a33;
@@ -9,7 +9,6 @@
     --gold: #2478ff;
     --muted: #5e7188;
     --line: rgba(7, 26, 51, 0.18);
-    --serif: "Newsreader", Georgia, serif;
     --sans: "Manrope", Arial, sans-serif;
     --mono: "Manrope", Arial, sans-serif;
 }
@@ -114,12 +113,6 @@ h1 {
     font-size: clamp(3.5rem, 7vw, 7.6rem);
     line-height: 0.88;
     letter-spacing: -0.065em;
-}
-h1 em,
-h2 em {
-    font-family: var(--serif);
-    font-weight: 400;
-    color: #2478ff;
 }
 .hero-lead {
     max-width: 620px;
@@ -349,7 +342,7 @@ h2 em {
 .manifesto blockquote {
     max-width: 1000px;
     margin: 2rem auto 3rem;
-    font: italic clamp(2.5rem, 5vw, 5.5rem)/1.05 var(--serif);
+    font: 700 clamp(2.5rem, 5vw, 5.5rem)/1.05 var(--sans);
 }
 .site-footer {
     padding: 2.3rem clamp(1.25rem, 5vw, 5rem);
@@ -589,7 +582,7 @@ h2 em {
     margin: 3rem 0;
     padding: 1.5rem 2rem;
     border-left: 4px solid var(--gold);
-    font: italic 1.8rem/1.35 var(--serif);
+    font: 600 1.4rem/1.45 var(--sans);
 }
 .prose pre {
     overflow: auto;
@@ -669,7 +662,7 @@ h2 em {
 }
 .portrait span {
     z-index: 1;
-    font: italic 5rem var(--serif);
+    font: 700 4rem var(--sans);
 }
 .portrait small {
     position: absolute;

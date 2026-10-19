@@ -9,11 +9,9 @@ const updates = (await getCollection("updates", ({ data }) => data.challenge ===
   <section class="challenge-hero">
     <div>
       <a class="back-link" href={withBase("challenges")}>← All challenges</a>
-      <p class="eyebrow">Challenge 01 · Active</p>
-      <h1>Expert<br/><em>System.</em></h1>
+      <h1>Expert<br/>System</h1>
     </div>
     <div class="hero-art"><img src={withBase("hero-grid.svg")} alt="Abstract expert system and finance diagram"/></div>
   </section>
-  <section id="journal" class="section journal"><div class="section-head"><div><p class="eyebrow">Progress log</p><h2>Weekly field notes.</h2></div><span class="count">{updates.length} entries</span></div><div class="updates-grid">{updates.map((entry) => <UpdateCard entry={entry}/>)}</div></section>
-  <aside class="disclaimer"><strong>Project boundary</strong><p>This academic prototype does not provide financial advice. Rules, thresholds, and outputs must be independently validated before any real-world use.</p></aside>
+  <section id="journal" class="section journal"><div class="section-head"><h2>Weekly updates</h2><span class="count">{updates.length} entries</span></div><div class="updates-grid">{updates.map((entry) => <UpdateCard entry={entry}/>)}</div></section>
 </BaseLayout>

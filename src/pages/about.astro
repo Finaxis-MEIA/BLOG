@@ -4,7 +4,7 @@ import { members } from "../data/members";
 import { withBase } from "../utils/paths";
 ---
 <BaseLayout title="About us" description="Meet the six students behind Finaxis.">
-  <section class="page-hero about-hero"><p class="eyebrow">The people behind the process</p><h1>Different backgrounds.<br/><em>Shared curiosity.</em></h1><p>We are six Master's students in AI Engineering learning how rigorous artificial intelligence gets built: collaboratively, critically, and in full view.</p></section>
+  <section class="page-hero about-hero"><h1>About us</h1><p>We are six students in the Master's in AI Engineering.</p></section>
   <section class="team-grid">
     {members.map((member, index) => (
       <article class="member-card">
@@ -14,7 +14,6 @@ import { withBase } from "../utils/paths";
           ) : (
             <>
               <span>{member.initials}</span>
-              <small>Profile image placeholder</small>
             </>
           )}
         </div>
@@ -33,5 +32,4 @@ import { withBase } from "../utils/paths";
       </article>
     ))}
   </section>
-  <section class="contact-band"><div><p class="eyebrow">Open to conversation</p><h2>Question our assumptions.</h2></div><p>Found a useful source, a flawed rule, or a better approach? Our work improves when others inspect it.</p><a class="button light" href="mailto:team@example.com">team@example.com</a></section>
 </BaseLayout>
