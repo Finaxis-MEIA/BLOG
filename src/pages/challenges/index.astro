@@ -1,11 +1,14 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { challenges } from "../../data/site";
+import { getCollection } from "astro:content";
 import { withBase } from "../../utils/paths";
+const updates = await getCollection("updates", ({ data }) => !data.draft);
+const countFor = (slug: string) => updates.filter((entry) => entry.data.challenge === slug).length;
 ---
 <BaseLayout title="Challenges" description="Four applied AI challenges explored through the lens of finance.">
-  <section class="page-hero"><h1>Challenges</h1></section>
+  <section class="page-hero"><h1>Challenges</h1><p>Four applied AI challenges, each pairing two courses of the Master's around one problem in finance.</p></section>
   <section class="challenge-cards">
-    {challenges.map((challenge) => <article class:list={["challenge-card", { muted: challenge.status === "Upcoming" }]}><div class="card-top"><span>{challenge.number}</span><span class:list={["status", challenge.status.toLowerCase()]}>{challenge.status}</span></div><h2>{challenge.title}</h2><p>{challenge.description}</p>{challenge.topics.length > 0 && <div class="tag-list">{challenge.topics.map((topic) => <span>{topic}</span>)}</div>}{challenge.status === "Active" ? <a class="button primary" href={withBase(`challenges/${challenge.slug}`)}>Open challenge</a> : <span class="coming">Brief pending</span>}</article>)}
+    {challenges.map((challenge) => <article class:list={["challenge-card", { muted: challenge.status === "Upcoming" }]}><div class="card-top"><span>{challenge.number}</span><span class:list={["status", challenge.status.toLowerCase()]}>{challenge.status}</span></div><h2>{challenge.title}</h2><p>{challenge.description}</p>{challenge.topics.length > 0 && <div class="tag-list">{challenge.topics.map((topic) => <span>{topic}</span>)}</div>}{challenge.status !== "Upcoming" ? <div class="card-actions"><a class="button primary" href={withBase(`challenges/${challenge.slug}`)}>Open challenge</a><span class="count">{countFor(challenge.slug)} weekly {countFor(challenge.slug) === 1 ? "update" : "updates"}</span></div> : <span class="coming">Brief pending</span>}</article>)}
   </section>
 </BaseLayout>

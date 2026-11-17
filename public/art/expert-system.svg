@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="A loan application passing through knock-out rules and a score, ending in approve, manual review or reject">
+  <defs>
+    <linearGradient id="band" x1="0" x2="1"><stop stop-color="#2478ff" stop-opacity=".25"/><stop offset=".5" stop-color="#2478ff"/><stop offset="1" stop-color="#4cc9f0"/></linearGradient>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0l10 5-10 5z" fill="#9fbbe3"/></marker>
+  </defs>
+  <rect width="800" height="600" rx="20" fill="#0b2a4a"/>
+  <g font-family="Manrope,Arial,sans-serif" fill="#f7faff">
+    <rect x="48" y="226" width="150" height="148" rx="10" fill="none" stroke="#9fbbe3" stroke-opacity=".6" stroke-width="2"/>
+    <text x="68" y="262" font-size="20" font-weight="700">Application</text>
+    <g fill="#9fbbe3" fill-opacity=".55"><rect x="68" y="284" width="110" height="8" rx="4"/><rect x="68" y="304" width="84" height="8" rx="4"/><rect x="68" y="324" width="98" height="8" rx="4"/><rect x="68" y="344" width="70" height="8" rx="4"/></g>
+    <path d="M206 300h44" stroke="#9fbbe3" stroke-width="2" marker-end="url(#a)"/>
+    <text x="262" y="140" font-size="18" font-weight="600" fill="#b8cde5">Knock-out rules</text>
+    <g fill="none" stroke="#4cc9f0" stroke-width="3">
+      <rect x="262" y="160" width="36" height="36" rx="6"/><rect x="262" y="208" width="36" height="36" rx="6"/><rect x="262" y="256" width="36" height="36" rx="6"/><rect x="262" y="304" width="36" height="36" rx="6"/><rect x="262" y="352" width="36" height="36" rx="6"/><rect x="262" y="400" width="36" height="36" rx="6"/>
+    </g>
+    <g stroke="#4cc9f0" stroke-width="3" fill="none" stroke-linecap="round"><path d="m270 178 6 6 12-12M270 226l6 6 12-12M270 274l6 6 12-12M270 322l6 6 12-12M270 418l6 6 12-12"/></g>
+    <path d="m271 361 18 18m0-18-18 18" stroke="#ff8a8a" stroke-width="3" stroke-linecap="round"/>
+    <path d="M306 370c60 0 80 90 130 110" fill="none" stroke="#ff8a8a" stroke-opacity=".7" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#a)"/>
+    <path d="M306 300h60" stroke="#9fbbe3" stroke-width="2" marker-end="url(#a)"/>
+    <text x="380" y="262" font-size="18" font-weight="600" fill="#b8cde5">Fuzzy score</text>
+    <rect x="380" y="282" width="200" height="36" rx="18" fill="url(#band)"/>
+    <circle cx="512" cy="300" r="12" fill="#0b2a4a" stroke="#f7faff" stroke-width="4"/>
+    <text x="380" y="352" font-size="15" fill="#9fbbe3">with certainty factors</text>
+    <path d="M590 300c40 0 40-110 70-110M590 300h66M590 300c40 0 40 110 70 110" fill="none" stroke="#9fbbe3" stroke-width="2" marker-end="url(#a)"/>
+    <text x="668" y="196" font-size="19" font-weight="700" fill="#4cc9f0">Approve</text>
+    <text x="668" y="294" font-size="19" font-weight="700">Manual</text>
+    <text x="668" y="318" font-size="19" font-weight="700">review</text>
+    <text x="668" y="416" font-size="19" font-weight="700" fill="#ff8a8a">Reject</text>
+    <text x="446" y="494" font-size="15" fill="#ff8a8a" fill-opacity=".85">A failed rule rejects straight away</text>
+    <text x="48" y="560" font-size="16" fill="#9fbbe3" fill-opacity=".8">Every step records why it fired, so each decision can be explained</text>
+  </g>
+</svg>

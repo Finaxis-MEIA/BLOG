@@ -1,0 +1,13 @@
+---
+import { memberById } from "../data/members";
+import { withBase } from "../utils/paths";
+const { ids, compact = false } = Astro.props as { ids: string[]; compact?: boolean };
+const people = ids.map((id) => memberById(id) ?? { id, name: id, initials: id.slice(0, 2).toUpperCase(), photo: undefined });
+const label = people.length === 6 ? "The whole team" : people.length === 1 ? people[0].name : `${people.length} authors`;
+---
+<div class:list={["authors", { compact }]}>
+  <ul class="avatars" aria-hidden="true">
+    {people.map((person) => <li>{person.photo ? <img src={withBase(person.photo)} alt="" width="32" height="32" loading="lazy"/> : <span>{person.initials}</span>}</li>)}
+  </ul>
+  <span class="authors-label" title={people.map((person) => person.name).join(", ")}>{compact ? label : people.map((person) => person.name).join(", ")}</span>
+</div>

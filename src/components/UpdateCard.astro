@@ -1,12 +1,15 @@
 ---
-import { memberName } from "../data/members";
+import Authors from "./Authors.astro";
+import { challengeBySlug } from "../data/site";
 import { withBase } from "../utils/paths";
-const { entry } = Astro.props;
-const date = entry.data.date.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+import { readingMinutes } from "../utils/updates";
+const { entry, showChallenge = false } = Astro.props;
+const date = entry.data.date.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" });
+const challenge = challengeBySlug(entry.data.challenge);
 ---
 <article class="update-card">
-  <div class="update-meta"><span>Week {String(entry.data.week).padStart(2, "0")}</span><time datetime={entry.data.date.toISOString()}>{date}</time></div>
+  <div class="update-meta"><span>{showChallenge && challenge && <b>{challenge.title}</b>}Week {String(entry.data.week).padStart(2, "0")}</span><time datetime={entry.data.date.toISOString()}>{date}</time></div>
   <h3><a href={withBase(`updates/${entry.id}`)}>{entry.data.title}</a></h3>
   <p>{entry.data.summary}</p>
-  <div class="update-foot"><span>{entry.data.authors.map(memberName).join(" · ")}</span><a href={withBase(`updates/${entry.id}`)} aria-label={`Read ${entry.data.title}`}>Read update <span aria-hidden="true">→</span></a></div>
+  <div class="update-foot"><Authors ids={entry.data.authors} compact/><span class="read-time">{readingMinutes(entry)} min read</span></div>
 </article>

@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import UpdateCard from "../../components/UpdateCard.astro";
+import { challenges, type Challenge } from "../../data/site";
+import { withBase } from "../../utils/paths";
+export function getStaticPaths() {
+  return challenges.filter((challenge) => challenge.status !== "Upcoming").map((challenge) => ({ params: { slug: challenge.slug }, props: { challenge } }));
+}
+const { challenge } = Astro.props as { challenge: Challenge };
+const updates = (await getCollection("updates", ({ data }) => data.challenge === challenge.slug && !data.draft)).sort((a, b) => b.data.week - a.data.week);
+const [firstWord, ...rest] = challenge.title.split(" ");
+---
+<BaseLayout title={challenge.title} description={`Challenge ${challenge.number}: ${challenge.description}`}>
+  <section class="challenge-hero">
+    <div>
+      <a class="back-link" href={withBase("challenges")}>← All challenges</a>
+      <h1>{firstWord}{rest.length > 0 && <><br/>{rest.join(" ")}</>}</h1>
+      <p class="challenge-lead">{challenge.description}</p>
+      <span class:list={["status", challenge.status.toLowerCase()]}>{challenge.status}</span>
+    </div>
+    <div class="hero-art"><img src={withBase(challenge.art?.src ?? "hero-grid.svg")} alt={challenge.art?.alt ?? ""} width="800" height="600"/><span class="art-tag">Challenge <b>{challenge.number}</b></span></div>
+  </section>
+  <section id="journal" class="section journal"><div class="section-head"><h2>Weekly updates</h2><span class="count">{updates.length} {updates.length === 1 ? "entry" : "entries"}</span></div><div class="updates-grid">{updates.map((entry) => <UpdateCard entry={entry}/>)}</div></section>
+</BaseLayout>

@@ -1,5 +1,5 @@
 export const members = [
-  { id: "member-1", initials: "JC", photo: "/team/member-1.png", name: "João Cruz", role: "AI Engineer", background: "AI Engineer working at Glintt Global.", skills: ["Python", "AI/ML", "Java"], email: "1230705@isep.ipp.pt", linkedin: "https://www.linkedin.com/in/joaocccruz/", github: "https://github.com/joaocarlos" },
+  { id: "member-1", initials: "JC", photo: "/team/member-1.png", name: "João Cruz", role: "AI Engineer", background: "AI Engineer working at Glintt Global.", skills: ["Python", "AI/ML", "Java"], email: "1230705@isep.ipp.pt", linkedin: "https://www.linkedin.com/in/joaocccruz/", github: "https://github.com/joaocarloscruz" },
   { id: "member-2", initials: "MC", photo: "/team/member-2.jpg", name: "Miguel Carneiro", role: "Power Platform Developer", background: "By working at a banking institution, I will be able to contribute knowledge gained through my exposure to financial experts.", skills: ["PowerPlatform", "Python", "PowerShell"], email: "1990895@isep.ipp.pt", linkedin: "https://www.linkedin.com/in/miguel-carneiro-846693151", github: "https://github.com/MiguelCarneiro" },
   { id: "member-3", initials: "PN", photo: "/team/member-3.jpg", name: "Pedro Natário", role: "Computer Science graduate", background: "Computer Science graduate with real experience in SharePoint migration, using Microsoft PowerPlatform.", skills: ["Java", "PowerPlatform", "Research"], email: "1230731@isep.ipp.pt", linkedin: "https://www.linkedin.com/in/pedrofnatario", github: "https://github.com/PedroFilipeNatario" },
   { id: "member-4", initials: "RS", photo: "/team/member-4.png", name: "Rodrigo Sousa", role: "Software Engineer", background: "Software Engineer working on the voice platform at Talkdesk, a market leader in Customer Experience Automation (CXA).", skills: ["Spring Boot", "Java", "Kotlin", "Ruby", "Scala"], email: "1260445@isep.ipp.pt", linkedin: "https://www.linkedin.com/in/rodrigo-sousa-bb8a69262/", github: "https://github.com/TDRodrigoSousa" },
@@ -8,3 +8,4 @@ export const members = [
 ];
 
 export const memberName = (id: string) => members.find((member) => member.id === id)?.name ?? id;
+export const memberById = (id: string) => members.find((member) => member.id === id);

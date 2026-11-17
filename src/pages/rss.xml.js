@@ -8,6 +8,6 @@ export async function GET(context) {
     title: `${site.name} updates`,
     description: site.description,
     site: context.site,
-    items: updates.map((entry) => ({ title: entry.data.title, description: entry.data.summary, pubDate: entry.data.date, link: `/updates/${entry.id}/` }))
+    items: updates.map((entry) => ({ title: entry.data.title, description: entry.data.summary, pubDate: entry.data.date, link: `${import.meta.env.BASE_URL.replace(/\/+$/, "")}/updates/${entry.id}/` }))
   });
 }
